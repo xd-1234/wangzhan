@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>记录｜Summary 模块</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap">
+  <style>
+    body {
+      margin: 0; padding: 40px;
+      background: radial-gradient(circle at top left, #0f0f0f, #000);
+      font-family: 'Orbitron', sans-serif; color: #00ffe0;
+      position: relative;
+    }
+    h1 { font-size: 28px; margin-bottom: 10px; text-shadow: 0 0 8px #00ffe0; }
+    p { font-size: 16px; color: #aaa; margin-bottom: 20px; }
+    .editor {
+      width: 100%; height: 300px; padding: 12px;
+      font-size: 16px; background: #111; color: #00ffe0;
+      border: 2px solid #00ffe0; border-radius: 10px; resize: vertical;
+      box-shadow: 0 0 12px #00ffe0 inset; transition: box-shadow .3s;
+    }
+    .editor:focus { box-shadow: 0 0 20px #00ffe0 inset; outline: none; }
+    .status { margin-top: 10px; font-size: 14px; color: #888; }
+    .actions { margin-top: 30px; }
+    .btn {
+      padding: 12px 24px; background: linear-gradient(90deg, #00ffe0, #0077ff);
+      color: #000; font-weight: bold; border: none; border-radius: 8px;
+      text-decoration: none; box-shadow: 0 0 10px #00ffe0;
+      transition: transform .2s, box-shadow .3s; margin-right: 10px;
+    }
+    .btn:hover { transform: scale(1.05); box-shadow: 0 0 20px #00ffe0; }
+    .nav-actions {
+      display: flex; justify-content: flex-end;
+      margin-top: 40px; gap: 10px;
+    }
+    .nav-btn {
+      padding: 12px 24px; font-weight: bold; text-decoration: none;
+      border-radius: 8px; transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(0,255,224,0.6);
+    }
+    .nav-btn.right { background: linear-gradient(90deg, #0077ff, #00ffe0); color: #000; }
+    .nav-btn:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(0,255,224,0.9); }
+    /* 右上角 × 按钮 */
+    .close-btn {
+      position: absolute; top: 15px; right: 20px;
+      font-size: 24px; color: #00ffe0; text-decoration: none;
+      font-weight: bold; cursor: pointer;
+      transition: transform 0.2s, color 0.3s;
+    }
+    .close-btn:hover { color: #ff4d4d; transform: scale(1.2); }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="close-btn">×</a>
+
+  <h1>📌 Summary 模块记录页</h1>
+  <p>记录 AI 视频精华与重点摘要。</p>
+
+  <textarea id="editor" class="editor" placeholder="输入......"></textarea>
+  <div id="status" class="status">尚未保存</div>
+
+  <div class="actions">
+    <button onclick="submitToCloud()" class="btn">☁️ 提交到云端</button>
+    <div class="nav-actions">
+      <a href="record-dream.html" class="nav-btn right">→ 前往 Dream 模块</a>
+    </div>
+  </div>
+
+  <script>
+    const editor = document.getElementById('editor');
+    const status = document.getElementById('status');
+    const moduleName = location.pathname.match(/record-(.+?)\.html/)?.[1] || 'summary';
+    const storageKey = `record-${moduleName}`;
+    const saved = localStorage.getItem(storageKey);
+    if (saved) {
+      editor.value = saved;
+      status.textContent = '✅ 已加载保存内容';
+    }
+    editor.addEventListener('input', () => {
+      localStorage.setItem(storageKey, editor.value);
+      status.textContent = '✅ 已自动保存';
+    });
+    function submitToCloud() {
+      const content = editor.value.trim();
+      if (!content) return alert("内容为空，无法提交");
+      const payload = { module: moduleName, content, timestamp: new Date().toISOString() };
+      fetch("https://script.google.com/macros/s/AKfycbw01g1Dfui1gtHV03sDdm8HwK7RtDgjHO8qPQ8c0mDOe1XsBF8pPRumfYyqk6fJJml3pg/exec", {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify(payload)
+      })
+      .then(async (res) => {
+        const text = await res.text();
+        if (!res.ok) {
+          throw new Error(`HTTP ${res.status} ${res.statusText}: ${text}`);
+        }
+        let display = text;
+        try {
+          const data = JSON.parse(text);
+          display = data.message || data.msg || text;
+        } catch (_) {}
+        status.textContent = "✅ 已提交到云端：" + display;
+        localStorage.removeItem(storageKey);
+      })
+      .catch(err => {
+        console.error(err);
+        status.textContent = "❌ 提交失败：" + (err?.message || "请稍后重试");
+      });
+    }
+  </script>
+</body>
+</html>

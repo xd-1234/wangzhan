@@ -1,0 +1,564 @@
+<!DOCTYPE HTML>
+<!--
+Dimension by 田家一
+html5up.net | @ajlkn
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="zh-CN">
+<head>
+<title>Dimension by 田家一</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="assets/css/main.css" />
+<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<canvas id="starfield"></canvas>
+</head>
+<body class="is-preload">
+
+<!-- Wrapper -->
+<div id="wrapper">
+<!-- Header -->
+<header id="header">
+<div class="logo">
+<span class="icon fa-gem"></span>
+</div>
+<div class="content">
+<div class="inner">
+<h1>Dimension</h1>
+<p>既然相信自己未来会更好，那么当下就应该认为自己就是未来的那个你 未来你是年收入超百万 现在就要把自己当成年薪百万以上的高净值人群看待自己
+信念都是自己给的 这种信念才是让我们坚持下去的动力
+与大家共勉！</p>
+</div>
+</div>
+<nav>
+<ul>
+<li><a href="#Summary">ai视频总结</a></li>
+<li><a href="#Dream">ai幻想</a></li>
+<li><a href="#about">个人总结</a></li>
+<li><a href="#Prompt">提示词</a></li>
+<!--<li><a href="#elements">Elements</a></li>-->
+</ul>
+</nav>
+</header>
+
+<!-- Main -->
+<div id="main">
+
+<!-- Summary -->
+<article id="Summary">
+  <h2 class="major">Summary</h2>
+  <p>不整花活，把 AI 视频里值得看的部分拎出来。</p>
+  <p>这里汇总的是我筛选后的 AI 技术精华。</p>
+  <a class="lesgo-btn" href="record-summary.html" target="_self">Lesgo 🚀</a>
+</article>
+
+<!-- Dream -->
+<article id="Dream">
+  <h2 class="major">Dream</h2>
+  <p>在这里记录创意脑洞、未来设想和天马行空的灵感。</p>
+  <p>AI 幻想模块，让想法自由飞翔。</p>
+  <a class="lesgo-btn" href="record-dream.html" target="_self">Lesgo 🚀</a>
+</article>
+
+<!-- About -->
+<article id="about">
+  <h2 class="major">About</h2>
+  <p>这是我的个人总结和站点说明。</p>
+  <p>记录我的思考、成长和对未来的规划。</p>
+  <a class="lesgo-btn" href="record-about.html" target="_self">Lesgo 🚀</a>
+</article>
+
+<!-- Prompt -->
+<article id="Prompt">
+  <h2 class="major">Prompt</h2>
+  <p>收集和整理我在日常使用中觉得有价值的提示词。</p>
+  <a class="lesgo-btn" href="record-prompt.html" target="_self">Lesgo 🚀</a>
+</article>
+
+<!-- Elements -->
+<article id="elements">
+<h2 class="major">Elements</h2>
+
+<section>
+<h3 class="major">Text</h3>
+<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
+This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
+This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
+<hr />
+<h2>Heading Level 2</h2>
+<h3>Heading Level 3</h3>
+<h4>Heading Level 4</h4>
+<h5>Heading Level 5</h5>
+<h6>Heading Level 6</h6>
+<hr />
+<h4>Blockquote</h4>
+<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis vo[...]
+</blockquote>
+<h4>Preformatted</h4>
+<pre><code>i = 0;
+
+while (!deck.isInOrder()) {
+    print 'Iteration ' + i;
+    deck.shuffle();
+    i++;
+}
+
+print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
+</section>
+
+<section>
+<h3 class="major">Lists</h3>
+
+<h4>Unordered</h4>
+<ul>
+<li>Dolor pulvinar etiam.</li>
+<li>Sagittis adipiscing.</li>
+<li>Felis enim feugiat.</li>
+</ul>
+
+<h4>Alternate</h4>
+<ul class="alt">
+<li>Dolor pulvinar etiam.</li>
+<li>Sagittis adipiscing.</li>
+<li>Felis enim feugiat.</li>
+</ul>
+
+<h4>Ordered</h4>
+<ol>
+<li>Dolor pulvinar etiam。</li>
+<li>Etiam vel felis viverra。</li>
+<li>Felis enim feugiat。</li>
+<li>Dolor pulvinar etiam。</li>
+<li>Etiam vel felis lorem。</li>
+<li>Felis enim et feugiat。</li>
+</ol>
+
+<h4>Icons</h4>
+<ul class="icons">
+  <li>
+    <a href="https://weixin.qq.com" target="_blank" rel="noopener noreferrer" class="icon brands fa-weixin" aria-label="WeChat">
+      <span class="label">WeChat</span>
+    </a>
+  </li>
+  <li>
+    <a href="https://twitter.com/你的账号" target="_blank" rel="noopener noreferrer" class="icon brands fa-x-twitter" aria-label="Twitter">
+      <span class="label">Twitter</span>
+    </a>
+  </li>
+</ul>
+
+<h4>Actions</h4>
+<ul class="actions">
+<li><a href="#" class="button primary">Default</a></li>
+<li><a href="#" class="button">Default</a></li>
+</ul>
+<ul class="actions stacked">
+<li><a href="#" class="button primary">Default</a></li>
+<li><a href="#" class="button">Default</a></li>
+</ul>
+</section>
+
+<section>
+<h3 class="major">Table</h3>
+<h4>Default</h4>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Price</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Item One</td>
+<td>Ante turpis integer aliquet porttitor.</td>
+<td>29.99</td>
+</tr>
+<tr>
+<td>Item Two</td>
+<td>Vis ac commodo adipiscing arcu aliquet.</td>
+<td>19.99</td>
+</tr>
+<tr>
+<td>Item Three</td>
+<td> Morbi faucibus arcu accumsan lorem.</td>
+<td>29.99</td>
+</tr>
+<tr>
+<td>Item Four</td>
+<td>Vitae integer tempus condimentum.</td>
+<td>19.99</td>
+</tr>
+<tr>
+<td>Item Five</td>
+<td>Ante turpis integer aliquet porttitor。</td>
+<td>29.99</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td colspan="2"></td>
+<td>100.00</td>
+</tr>
+</tfoot>
+</table>
+</div>
+
+<h4>Alternate</h4>
+<div class="table-wrapper">
+<table class="alt">
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Price</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Item One</td>
+<td>Ante turpis integer aliquet porttitor.</td>
+<td>29.99</td>
+</tr>
+<tr>
+<td>Item Two</td>
+<td>Vis ac commodo adipiscing arcu aliquet.</td>
+<td>19.99</td>
+</tr>
+<tr>
+<td>Item Three</td>
+<td> Morbi faucibus arcu accumsan lorem.</td>
+<td>29.99</td>
+</tr>
+<tr>
+<td>Item Four</td>
+<td>Vitae integer tempus condimentum。</td>
+<td>19.99</td>
+</tr>
+<tr>
+<td>Item Five</td>
+<td>Ante turpis integer aliquet porttitor。</td>
+<td>29.99</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td colspan="2"></td>
+<td>100.00</td>
+</tr>
+</tfoot>
+</table>
+</div>
+</section>
+
+<section>
+<h3 class="major">Buttons</h3>
+<ul class="actions">
+<li><a href="#" class="button primary">Primary</a></li>
+<li><a href="#" class="button">Default</a></li>
+</ul>
+<ul class="actions">
+<li><a href="#" class="button">Default</a></li>
+<li><a href="#" class="button small">Small</a></li>
+</ul>
+<ul class="actions">
+<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
+<li><a href="#" class="button icon solid fa-download">Icon</a></li>
+</ul>
+<ul class="actions">
+<li><span class="button primary disabled">Disabled</span></li>
+<li><span class="button disabled">Disabled</span></li>
+</ul>
+</section>
+
+<section>
+<h3 class="major">Form</h3>
+<form method="post" action="#">
+<div class="fields">
+<div class="field half">
+<label for="demo-name">Name</label>
+<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
+</div>
+<div class="field half">
+<label for="demo-email">Email</label>
+<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
+</div>
+<div class="field">
+<label for="demo-category">Category</label>
+<select name="demo-category" id="demo-category">
+<option value="">-</option>
+<option value="1">Manufacturing</option>
+<option value="1">Shipping</option>
+<option value="1">Administration</option>
+<option value="1">Human Resources</option>
+</select>
+</div>
+<div class="field half">
+<input type="radio" id="demo-priority-low" name="demo-priority" checked>
+<label for="demo-priority-low">Low</label>
+</div>
+<div class="field half">
+<input type="radio" id="demo-priority-high" name="demo-priority">
+<label for="demo-priority-high">High</label>
+</div>
+<div class="field half">
+<input type="checkbox" id="demo-copy" name="demo-copy">
+<label for="demo-copy">Email me a copy</label>
+</div>
+<div class="field half">
+<input type="checkbox" id="demo-human" name="demo-human" checked>
+<label for="demo-human">Not a robot</label>
+</div>
+<div class="field">
+<label for="demo-message">Message</label>
+<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+</div>
+</div>
+<ul class="actions">
+<li><input type="submit" value="Send Message" class="primary" /></li>
+<li><input type="reset" value="Reset" /></li>
+</ul>
+</form>
+</section>
+
+</article>
+
+</div>
+
+<!-- 原有代码保持不动 -->
+  <!-- Footer -->
+  <footer id="footer">
+    <p class="copyright">&copy; 2025 田家一 设计与开发 </p>
+  </footer>
+</div>
+
+<!-- BG -->
+<div id="bg"></div>
+
+<!-- 悬浮联系方式 -->
+<!-- 联系方式 FAB（右下角，替换 #contact-float） -->
+<div class="contact-fab" aria-label="联系方式" style="z-index:10010;">
+  <button class="fab-core" aria-label="打开联系方式"></button>
+
+  <!-- 旋转轨道（像太极一样绕圆心旋转） -->
+  <div class="orbit" style="--r: 56px; --speed: 10s;">
+    <!-- A 节点：WeChat（点击仍然调用你现有的弹窗） -->
+    <a class="node node--dark node--a"
+       href="javascript:void(0)"
+       onclick="return showContact('WeChat')"
+       aria-label="WeChat" title="WeChat">
+      <i class="fa-brands fa-weixin" aria-hidden="true"></i>
+    </a>
+
+    <!-- B 节点：Twitter（同理弹窗） -->
+    <a class="node node--light node--b"
+       href="javascript:void(0)"
+       onclick="return showContact('Twitter')"
+       aria-label="Twitter" title="Twitter">
+      <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+    </a>
+  </div>
+</div>
+
+<!-- 弹窗 -->
+<div id="contact-popup" class="hidden" style="z-index:10010;">
+  <div class="popup-content">
+    <span class="close-btn" onclick="hideContact()">&times;</span>
+    <h3 id="contact-title"></h3>
+    <p id="contact-info"></p>
+  </div>
+</div>
+
+<style>
+  /* 悬浮按钮样式 */
+   /* 圆形容器（右下角） */
+:root {
+  --fab-size: 72px;
+  --fab-bg: rgba(255,255,255,0.06);
+  --fab-stroke: rgba(255,255,255,0.14);
+  --fab-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  --node-size: 48px;
+  --node-shadow: 0 8px 18px rgba(0,0,0,0.35);
+  --speed: 10s;
+}
+
+.contact-fab {
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  width: var(--fab-size);
+  height: var(--fab-size);
+  border-radius: 50%;
+  background: var(--fab-bg);
+  border: 1px solid var(--fab-stroke);
+  box-shadow: var(--fab-shadow);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 10001;
+  display: grid;
+  place-items: center;
+  overflow: visible;
+  pointer-events: auto;
+}
+
+.fab-core {
+  width: calc(var(--fab-size) - 18px);
+  height: calc(var(--fab-size) - 18px);
+  border-radius: 50%;
+  border: 1px solid var(--fab-stroke);
+  background: transparent;
+  cursor: pointer;
+  z-index: 0;
+}
+
+/* 旋转轨道：公转实现“太极式”效果 */
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  transform-origin: 0 0;
+  animation: spin var(--speed) linear infinite;
+  will-change: transform;
+  /* 只让节点响应点击，轨道不拦截点击 */
+  pointer-events: none;
+}
+
+/* 悬停暂停旋转，方便点击（桌面端） */
+.contact-fab:hover .orbit {
+  animation-play-state: paused;
+}
+
+.node {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--node-size);
+  height: var(--node-size);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  box-shadow: var(--node-shadow);
+  border: 1px solid var(--fab-stroke);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  font-size: 18px; /* Font Awesome 图标大小 */
+  pointer-events: auto;
+  z-index: 1;
+}
+
+/* 对角分布（相反半径） */
+.node--a { transform: translate(-50%, -50%) translate(var(--r), 0); }
+.node--b { transform: translate(-50%, -50%) translate(calc(var(--r) * -1), 0); }
+
+/* 黑白对比（贴合你的黑科幻风） */
+.node--dark { background: #0a0a0a; color: #fff; }
+.node--light { background: #ffffff; color: #0a0a0a; }
+
+/* 交互细节 */
+.node:active {
+  transform: translate(-50%, -50%) scale(0.96);
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .orbit { animation: none; }
+}
+/* 矫正 active 缩放时的位置（覆盖通用 :active） */
+.node--a:active {
+  transform: translate(-50%, -50%) translate(var(--r), 0) scale(0.96);
+}
+.node--b:active {
+  transform: translate(-50%, -50%) translate(calc(var(--r) * -1), 0) scale(0.96);
+}
+
+/* 弹窗显示控制 */
+#contact-popup.hidden {
+  display: none;
+}
+#contact-popup {
+  position: fixed;
+  bottom: 120px;
+  right: 40px;
+  background: rgba(0,0,0,0.85);
+  color: #fff;
+  padding: 16px 24px;
+  border-radius: 12px;
+  z-index: 10002; /* 比节点更高，确保在最上 */
+  max-width: 240px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  backdrop-filter: blur(6px);
+}
+.popup-content h3 {
+  margin-top: 0;
+  font-size: 16px;
+}
+.popup-content p {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+.close-btn {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+</style>
+<script>
+  function showContact(type) {
+    const popup = document.getElementById('contact-popup');
+    const title = document.getElementById('contact-title');
+    const info = document.getElementById('contact-info');
+    if (type === 'WeChat') {
+      title.textContent = '我的微信号';
+      info.textContent = 'tjy021006';
+    } else if (type === 'Twitter') {
+      title.textContent = '我的推特';
+      info.textContent = '@312679t';
+    }
+    // 交互时暂停旋转，避免“移动目标”带来的误触
+    const orbit = document.querySelector('.orbit');
+    if (orbit) orbit.style.animationPlayState = 'paused';
+
+    popup.classList.remove('hidden');
+    return false; // 阻止默认行为
+  }
+  function hideContact() {
+    document.getElementById('contact-popup').classList.add('hidden');
+    // 弹窗关闭后允许恢复旋转
+    const orbit = document.querySelector('.orbit');
+    if (orbit) orbit.style.animationPlayState = '';
+  }
+
+  // 触控/鼠标交互时也暂停旋转，提升命中率（移动端没有 hover）
+  (function () {
+    const orbit = document.querySelector('.orbit');
+    const fab = document.querySelector('.contact-fab');
+    if (!orbit || !fab) return;
+
+    const pause = () => { orbit.style.animationPlayState = 'paused'; };
+    const resume = () => { orbit.style.animationPlayState = ''; };
+
+    fab.addEventListener('pointerenter', pause);
+    fab.addEventListener('pointerdown', pause);
+    fab.addEventListener('pointerleave', resume);
+  })();
+</script>
+
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
