@@ -130,7 +130,7 @@ router.post('/:id/execute', authMiddleware, async (req, res) => {
     }
 
     // Start transaction to execute the plan
-    await prisma.$transaction(async (tx) => {
+    await prisma.$transaction(async (tx: any) => {
       // Create borrow records
       for (const item of plan.items) {
         await tx.borrowRecord.create({

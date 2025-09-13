@@ -59,7 +59,7 @@ router.post('/:id/return', authMiddleware, async (req, res) => {
     }
 
     // Update record and book status in transaction
-    await prisma.$transaction(async (tx) => {
+    await prisma.$transaction(async (tx: any) => {
       // Update return date
       await tx.borrowRecord.update({
         where: { id },

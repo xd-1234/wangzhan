@@ -58,13 +58,13 @@ export async function generateBorrowPlan(request: BorrowPlanRequest): Promise<Pl
     const studentHistory = studentBorrowHistory.get(studentId) || new Set()
     
     // Find a book that this student hasn't borrowed before
-    let assignedBook = availableBooks.find(book => 
+    let assignedBook = availableBooks.find((book: any) => 
       !usedBookIds.has(book.id) && !studentHistory.has(book.id)
     )
 
     // If no new book available, allow repeat but mark it
     if (!assignedBook) {
-      assignedBook = availableBooks.find(book => !usedBookIds.has(book.id))
+      assignedBook = availableBooks.find((book: any) => !usedBookIds.has(book.id))
     }
 
     if (assignedBook) {
