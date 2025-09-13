@@ -1,0 +1,85 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id           String       @id @default(cuid())
+  username     String       @unique
+  passwordHash String
+  role         String       @default("teacher")
+  plans        BorrowPlan[] @relation("UserPlans")
+  createdAt    DateTime     @default(now())
+}
+
+model Class {
+  id        String       @id @default(cuid())
+  name      String       @unique
+  students  Student[]
+  plans     BorrowPlan[]
+  createdAt DateTime     @default(now())
+}
+
+model Student {
+  id        String           @id @default(cuid())
+  name      String
+  class     Class            @relation(fields: [classId], references: [id])
+  classId   String
+  records   BorrowRecord[]
+  planItems BorrowPlanItem[]
+  createdAt DateTime         @default(now())
+}
+
+model Book {
+  id        String           @id @default(cuid())
+  title     String
+  author    String
+  category  String
+  location  String
+  status    String           @default("available") // available | borrowed
+  currentBorrowerStudentId String?
+  timesBorrowed Int          @default(0)
+  records   BorrowRecord[]
+  planItems BorrowPlanItem[]
+  createdAt DateTime         @default(now())
+}
+
+model BorrowPlan {
+  id            String           @id @default(cuid())
+  createdAt     DateTime         @default(now())
+  createdBy     User             @relation("UserPlans", fields: [createdByUserId], references: [id])
+  createdByUserId String
+  class         Class            @relation(fields: [classId], references: [id])
+  classId       String
+  status        String           @default("pending") // pending | executed | canceled
+  items         BorrowPlanItem[]
+}
+
+model BorrowPlanItem {
+  id        String      @id @default(cuid())
+  plan      BorrowPlan  @relation(fields: [planId], references: [id])
+  planId    String
+  student   Student     @relation(fields: [studentId], references: [id])
+  studentId String
+  book      Book        @relation(fields: [bookId], references: [id])
+  bookId    String
+  isRepeat  Boolean     @default(false)
+}
+
+model BorrowRecord {
+  id         String    @id @default(cuid())
+  student    Student   @relation(fields: [studentId], references: [id])
+  studentId  String
+  book       Book      @relation(fields: [bookId], references: [id])
+  bookId     String
+  borrowDate DateTime  @default(now())
+  returnDate DateTime?
+  planId     String?
+}
